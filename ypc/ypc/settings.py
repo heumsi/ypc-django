@@ -114,5 +114,7 @@ BASE_URL = 'http://127.0.0.1:8000'
 SUMMERNOTE_CONFIG = {
 	'summernote': {
 		'width': '100%',
+		'height': '700px',
+		'airMode': False,
 	}
 }

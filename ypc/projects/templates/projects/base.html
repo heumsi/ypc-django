@@ -23,6 +23,9 @@
 <!--    font-awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+<!-- 	scroll-up-bar -->
+	<script src="{% static 'js/scroll-up-bar.js' %}"></script>
+
 <!--    custom js & css-->
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -34,9 +37,9 @@
    <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="topbar">
         <div class="logo">
-            <a href="./index.html"><img src="{% static 'img/yp_logo.png' %}" alt="YPC 로고"></a>
+            <a href="{% url 'project_list' %}"><img src="{% static 'img/yp_logo.png' %}" alt="YPC 로고"></a>
         </div>
         <div class="menu-icon">
             <i class="fas fa-bars"></i>

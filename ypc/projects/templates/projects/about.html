@@ -103,7 +103,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            
+
             // If sidebar clicked, then scroll moved to the position.
             $(".sidebar ul").on("click", "li", function() {
                 var id = $("#" + $(this).text());
@@ -112,7 +112,7 @@
                     scrollTop: scrollPosition
                 }, 500);
             });
-            
+
             // If scrollbar moved, then sidebar text color changed.
                 // 1. Save position of sidebar li text into scrollPosition.
             var scrollPosition = new Array();
@@ -121,20 +121,18 @@
                 var id = $("#" + $(this).text());
                 scrollPosition.push( id.offset().top - 120 );
             });
-            
+
                 // 2. Whenever scroll event occurs, find currentIndex and change css.
             $(window).scroll(function(event){
-                console.log(scrollPosition);
                 var y = $(this).scrollTop();
-                console.log(y);
                 var currentIndex = 0;
-                
+
                 for( var i=0 ; i<scrollPosition.length ; i++ ){
                     if ( y >= scrollPosition[i] ){
                         currentIndex = i;
                     }
                 }
-                
+
                 for( var i=0 ; i<sidebar_li.length ; i++ ){
                     if( i == currentIndex ){
                         $(sidebar_li[i]).css("color", "#eb1313");
@@ -143,8 +141,8 @@
                     }
                 }
             });
-            
-            
+
+
         });
     </script>
 </body>

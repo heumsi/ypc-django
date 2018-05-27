@@ -24,7 +24,7 @@
 			<div class="form-group">
 		        {{ form.text.errors }}
 				<label for="title">내용</label>
-			    {{ form.text }}
+			    {{ form.text | safe }}
 				<small class="form-text text-muted">Project 내용을 입력해주세요.</small>
 		    </div>
 			<div class="form-group">
@@ -33,11 +33,6 @@
 			    {{ form.cover_image }}
 				<small class="form-text text-muted">상단에 보여질 커버사진을 올려주세요.</small>
 		    </div>
-			<!-- <div class="form-group">
-				<label>Project 이름</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-				<small id="emailHelp" class="form-text text-muted">Project 이름을 입력해주세요.</small>
-			</div> -->
 			<button type="submit" class="btn btn-primary">Save</button>
 		</form>
 	</div>

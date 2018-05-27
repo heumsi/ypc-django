@@ -1,0 +1,99 @@
+/*for pc*/
+
+@media screen and (min-width: 601px) {
+    /* intro-view */
+    .intro-view{
+        height: 450px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .intro-view > .title{
+        padding: 20px 0 0 0;
+    /*    background-color: dodgerblue;*/
+    }
+
+    .intro-view .slogan{
+        line-height: 120%;
+        font-size: 100px;
+    }
+
+    .intro-view > .description{
+    /*    background-color: blueviolet;*/
+        height: 220px;
+        margin-top: 10%;
+        padding: 20px;
+        border-left: 2px solid var(--color-dark-black);
+    }
+
+    .intro-view > .description > h3{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .intro-view > .description > p {   
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 200%;
+        color: var(--color-bright-black);
+    }
+    
+    
+    .content-item{
+        margin-top: 40px;
+    }
+
+    .content-item:first-of-type{
+        margin-top: 0;
+    }
+}
+
+/*for mobile*/
+@media screen and (max-width: 600px) {
+    /* intro-view */
+     .intro-view{
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        
+    }
+
+    .intro-view > .title{
+        padding: 20px 0 0 0;
+    }
+
+    .intro-view .slogan{
+        line-height: 120%;
+        font-size: 60px;
+    }
+
+    .intro-view > .description{
+        height: 250px;
+        margin-top: 20px;
+        padding: 20px;
+        border-top: 2px solid var(--color-bright-black);
+        line-height: 180%;
+    }
+
+    .intro-view > .description > h3{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .intro-view > .description > p {   
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--color-bright-black);
+    }
+    
+    .intro-view > .description > textarea {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--color-bright-black);
+        border: none;
+        resize: none;
+        font-family: inherit;
+    }
+
+}

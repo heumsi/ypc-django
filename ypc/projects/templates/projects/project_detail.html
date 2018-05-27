@@ -1,0 +1,31 @@
+{% extends 'projects/base.html' %}
+
+{% block content %}
+    <div class="project-intro" style="background: url('/media/{{ project.cover_image }}'); background-position: center; background-size: cover;">
+        <div class="intro-container">
+            <div class="intro-description-box">
+                <h3>{{ project.title }}</h3>
+                <p class="teamName">{{ project.team_name }}</p>
+                <p class="description">{{ project.description }}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+			{% if user.is_authenticated %}
+				<ul class="top-menu">
+					<li>
+						<button type="button" class="btn btn-light"><a href="{% url 'project_edit' pk=project.pk %}"><i class="fas fa-edit"></i>  수정</a></button>
+					</li>
+					<li>
+						<button type="button" class="btn btn-light"><a href="{% url 'project_remove' pk=project.pk %}"><i class="fas fa-trash"></i>  삭제</a></button>
+					</li>
+				</ul>
+			{% endif %}
+            <div class="content-description">
+                {{ project.text }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

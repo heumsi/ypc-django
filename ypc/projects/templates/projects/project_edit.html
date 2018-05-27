@@ -1,0 +1,45 @@
+{% extends 'projects/base.html' %} {% block content %}
+<div class="container">
+	<div class="content">
+		<form method='post' enctype="multipart/form-data">
+			{% csrf_token %}
+		    <div class="form-group">
+		        {{ form.title.errors }}
+				<label for="title">제목</label>
+			    {{ form.title }}
+				<small class="form-text text-muted">Project의 제목을 입력해주세요.</small>
+		    </div>
+			<div class="form-group">
+		        {{ form.team_name.errors }}
+				<label for="title">팀 이름</label>
+			    {{ form.team_name }}
+				<small class="form-text text-muted">Project의 팀 이름을 입력해주세요.</small>
+		    </div>
+			<div class="form-group">
+		        {{ form.description.errors }}
+				<label for="title">설명</label>
+			    {{ form.description }}
+				<small class="form-text text-muted">Project에 대한 간단한 설명을 입력해주세요.</small>
+		    </div>
+			<div class="form-group">
+		        {{ form.text.errors }}
+				<label for="title">내용</label>
+			    {{ form.text }}
+				<small class="form-text text-muted">Project 내용을 입력해주세요.</small>
+		    </div>
+			<div class="form-group">
+		        {{ form.cover_image.errors }}
+				<label for="title">커버사진</label>
+			    {{ form.cover_image }}
+				<small class="form-text text-muted">상단에 보여질 커버사진을 올려주세요.</small>
+		    </div>
+			<!-- <div class="form-group">
+				<label>Project 이름</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				<small id="emailHelp" class="form-text text-muted">Project 이름을 입력해주세요.</small>
+			</div> -->
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -2,14 +2,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import News
 from .forms import NewsForm
+from el_pagination.decorators import page_template
 
 # Create your views here.
-def news_list(request) :
-	# news = News.objects
-	# print("#########", news)
-	# if(  )
+@page_template('news/news_list.html')  # just add this decorator
+def news_list(request, template='news/news.html', extra_context=None) :
 	news = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'news/news.html', {'news' : news})
+	context = {
+		'news' : news,
+	}
+	if extra_context is not None:
+		context.update(extra_context)
+	return render(request, template, context)
 
 def news_detail(request, pk) :
     news = get_object_or_404(News, pk=pk)

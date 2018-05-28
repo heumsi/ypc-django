@@ -14,7 +14,6 @@ def project_list(request, template='projects/projects.html', extra_context=None)
 	}
 	if extra_context is not None:
 		context.update(extra_context)
-	print(context)
 	return render(request, template, context)
 
 def project_detail(request, pk) :

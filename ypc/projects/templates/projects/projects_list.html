@@ -1,18 +1,18 @@
-				{% load el_pagination_tags %}
-				{% paginate projects %}
-				{% for project in projects %}
-	                <a href="{% url 'projects:project_detail' pk=project.pk %}">
-	                    <div class="project-item">
-	                        <div class="item-img-box">
-	                            <div class="prj-img"
-									style="background: url({{ project.cover_image.url }}); background-size: cover; background-position: center;"></div>
-	                        </div>
-	                        <div class="item-description">
-	                            <h3>{{ project.title }}</h3>
-	                            <h5>{{ project.team_name }} </h5>
-	                            <p>{{ project.description|linebreaksbr }}</p>
-	                        </div>
-	                    </div>
-	                </a>
-                {% endfor %}
-				{% show_more "" %}
+{% load el_pagination_tags %}
+{% paginate projects %}
+{% for project in projects %}
+    <a href="{% url 'projects:project_detail' pk=project.pk %}">
+        <div class="project-item">
+            <div class="item-img-box">
+                <div class="prj-img"
+					style="background: url({{ project.cover_image.url }}); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="item-description">
+                <h3>{{ project.title }}</h3>
+                <h5>{{ project.team_name }} </h5>
+                <p>{{ project.description|linebreaksbr }}</p>
+            </div>
+        </div>
+    </a>
+{% endfor %}
+{% show_more "" %}

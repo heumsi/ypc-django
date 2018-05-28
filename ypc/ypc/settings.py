@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 	'projects',
 	'news',
 	'django_summernote',
+	'el_pagination',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,6 @@ SUMMERNOTE_CONFIG = {
 		'airMode': False,
 	}
 }
+
+EL_PAGINATION_PER_PAGE = 3
+EL_PAGINATION_LOADING = ""

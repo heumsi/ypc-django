@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
     <div class="container">
-        <div class="sidebar">
+        <!-- <div class="sidebar">
             <ul>
                 <li>카테고리 A</li>
                 <li>카테고리 B</li>
                 <li>카테고리 C</li>
                 <li>카테고리 D</li>
             </ul>
-        </div>
+        </div> -->
         <div class="content top-sidebar">
             <h1>PROJECTS</h1>
 			{% if user.is_authenticated %}
@@ -19,23 +20,11 @@
 					</li>
 				</ul>
 			{% endif %}
-            <div class="project-list">
-				{% for project in projects %}
-	                <a href="{% url 'projects:project_detail' pk=project.pk %}">
-	                    <div class="project-item">
-	                        <div class="item-img-box">
-	                            <div class="prj-img"
-									style="background: url({{ project.cover_image.url }} ); background-size: cover; background-position: center;"></div>
-	                        </div>
-	                        <div class="item-description">
-	                            <h3>{{ project.title }}</h3>
-	                            <h5>{{ project.team_name }} </h5>
-	                            <p>{{ project.description|linebreaksbr }}</p>
-	                        </div>
-	                    </div>
-	                </a>
-                {% endfor %}
-            </div>
+			<div class="project-list">
+				{% include page_template %}
+			</div>
+			    <script>$.endlessPaginate({paginateOnScroll: true});</script>
+
         </div>
     </div>
 {% endblock %}

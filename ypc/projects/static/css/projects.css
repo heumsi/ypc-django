@@ -81,13 +81,14 @@
 }
 
 .project-list .item-description > p{
-	height: 100px;
+	height: 70px;
+	margin: 0;
     font-size: 14px;
     line-height: 180%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
-	-webkit-line-clamp: 2; /* 라인수 */
+	-webkit-line-clamp: 3; /* 라인수 */
 	-webkit-box-orient: vertical;
 	word-wrap:break-word;
 }

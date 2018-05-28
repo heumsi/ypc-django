@@ -1,4 +1,4 @@
-{% extends 'projects/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
     <div class="container">
@@ -15,26 +15,25 @@
 			{% if user.is_authenticated %}
 				<ul class="top-menu">
 					<li>
-						<button type="button" class="btn btn-light"><a href="{% url 'project_new' %}" class=""><i class="fas fa-plus"></i>  추가</a></button>
+						<button type="button" class="btn btn-light"><a href="{% url 'projects:project_new' %}" class=""><i class="fas fa-plus"></i>  추가</a></button>
 					</li>
 				</ul>
 			{% endif %}
             <div class="project-list">
-
 				{% for project in projects %}
-                <a href="{% url 'project_detail' pk=project.pk %}">
-                    <div class="project-item">
-                        <div class="item-img-box">
-                            <div class="prj-img"
-								style="background: url({{ project.cover_image.url }} ); background-size: cover; background-position: center;"></div>
-                        </div>
-                        <div class="item-description">
-                            <h3>{{ project.title }}</h3>
-                            <h5>{{ project.team_name }} </h5>
-                            <p>{{ project.description|linebreaksbr }}</p>
-                        </div>
-                    </div>
-                </a>
+	                <a href="{% url 'projects:project_detail' pk=project.pk %}">
+	                    <div class="project-item">
+	                        <div class="item-img-box">
+	                            <div class="prj-img"
+									style="background: url({{ project.cover_image.url }} ); background-size: cover; background-position: center;"></div>
+	                        </div>
+	                        <div class="item-description">
+	                            <h3>{{ project.title }}</h3>
+	                            <h5>{{ project.team_name }} </h5>
+	                            <p>{{ project.description|linebreaksbr }}</p>
+	                        </div>
+	                    </div>
+	                </a>
                 {% endfor %}
             </div>
         </div>

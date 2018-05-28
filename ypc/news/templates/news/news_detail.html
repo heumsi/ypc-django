@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="project-intro" style="background: url('/media/{{ news.cover_image }}'); background-position: center; background-size: cover;">
+        <div class="intro-container">
+            <div class="intro-description-box">
+                <h3>{{ news.title }}</h3>
+                <p class="teamName">{{ news.published_date }}</p>
+                <p class="description">{{ news.description }}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+			{% if user.is_authenticated %}
+				<ul class="top-menu">
+					<li>
+						<button type="button" class="btn btn-light"><a href="{% url 'news:news_edit' pk=news.pk %}"><i class="fas fa-edit"></i>  수정</a></button>
+					</li>
+					<li>
+						<button type="button" class="btn btn-light"><a href="{% url 'news:news_remove' pk=news.pk %}"><i class="fas fa-trash"></i>  삭제</a></button>
+					</li>
+				</ul>
+			{% endif %}
+            <div class="content-description">
+                {{ news.text | safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

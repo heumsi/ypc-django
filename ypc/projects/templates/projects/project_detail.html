@@ -1,4 +1,4 @@
-{% extends 'projects/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
     <div class="project-intro" style="background: url('/media/{{ project.cover_image }}'); background-position: center; background-size: cover;">
@@ -16,10 +16,10 @@
 			{% if user.is_authenticated %}
 				<ul class="top-menu">
 					<li>
-						<button type="button" class="btn btn-light"><a href="{% url 'project_edit' pk=project.pk %}"><i class="fas fa-edit"></i>  수정</a></button>
+						<button type="button" class="btn btn-light"><a href="{% url 'projects:project_edit' pk=project.pk %}"><i class="fas fa-edit"></i>  수정</a></button>
 					</li>
 					<li>
-						<button type="button" class="btn btn-light"><a href="{% url 'project_remove' pk=project.pk %}"><i class="fas fa-trash"></i>  삭제</a></button>
+						<button type="button" class="btn btn-light"><a href="{% url 'projects:project_remove' pk=project.pk %}"><i class="fas fa-trash"></i>  삭제</a></button>
 					</li>
 				</ul>
 			{% endif %}

@@ -2,11 +2,11 @@
 
 :root{
 /*    projects*/
-    --project-item-height: 380px;
-    
+    --project-item-height: 400px;
+
     --item-img-box-height: 200px;
     --item-description-height: calc(100% - var(--item-img-box-height));
-    
+
 /*    projects-detail*/
     --intro-container-height: 500px;
     --intro-container-mobile-height: 500px;
@@ -21,13 +21,14 @@
 
 .project-list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat( 3, minmax(250px, 1fr) );
     grid-row-gap: 20px;
     grid-column-gap: 20px;
 }
 
 .project-list .project-item{
-    height: var(--project-item-height);
+	height: fit-content;
+    /* height: var(--project-item-height); */
 /*    background-color: burlywood;*/
     border-bottom: 4px solid #80f57a;
     cursor: pointer;
@@ -46,6 +47,8 @@
     transition: all 0.5s ease;
     width: 100%;
     height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .project-item:hover{
@@ -53,16 +56,17 @@
 }
 
 
-.project-item:hover #sample_item{
+.project-item:hover .prj-img{
     width: 100%;
     transform: scale(1.2);
 }
 
 .project-list .item-description{
-    height: var(--item-description-height);
     padding: 20px;
+	height: fit-content;
 /*    background-color: cadetblue;*/
     display: block;
+	overflow: hidden;
 }
 
 .project-list .item-description > h3{
@@ -77,14 +81,16 @@
 }
 
 .project-list .item-description > p{
+	height: 70px;
+	margin: 0;
     font-size: 14px;
-    line-height: 180%;;
-}
-
-#sample_item{
-    background-image: url("../img/sample_bg.jpeg");
-    background-size: cover;
-    background-position: center;
+    line-height: 180%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* 라인수 */
+	-webkit-box-orient: vertical;
+	word-wrap:break-word;
 }
 
 /*************************************/
@@ -96,9 +102,6 @@
 /*    height: 500px;*/
     margin-top: var(--header-height);
     position: relative;
-    background: url("../img/sample_bg.jpeg");
-    background-position: center;
-    background-size: cover;
 }
 
 .project-intro > .intro-container{
@@ -110,7 +113,7 @@
 
 .intro-description-box{
     width: var(--intro-description-width);
-    height: var(--intro-description-height);
+    height: fit-content;
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -134,6 +137,7 @@
     font-size: 16px;
     text-align: left;
     line-height: 180%;
+	word-wrap:break-word;
 }
 
 .project-description h5{
@@ -149,10 +153,10 @@
 @media screen and (max-width: 600px) {
     .project-list{
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(250px, 1fr);
         grid-row-gap: 40px;
     }
-    
+
 
 /*    project-detail*/
     .project-intro > .intro-container{

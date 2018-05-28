@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="content">
+            <div class="intro-view">
+                <div class="title">
+                    <p class="slogan">
+                        슬로건을<br> 여기에
+                        <br> 넣어주세요.
+                    </p>
+                </div>
+                <div class="description">
+                    <h3>Young Profeesional Connected</h3>
+<!--
+                    <textarea name="" id="" cols="30" rows="10">YPC는 이런 그룹입니다. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum magni consectetur sed quis cupiditate quos. Cumque delectus quasi dolor ipsum.
+                    </textarea>
+-->
+                                        <p>YPC는 이런 그룹입니다. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum magni consectetur sed quis cupiditate quos. Cumque delectus quasi dolor ipsum.</p>
+                </div>
+            </div>
+            <div class="content-item">
+                <h1>PROJECTS</h1>
+                <div class="project-list">
+
+					{% for project in projects %}
+		                <a href="{% url 'projects:project_detail' pk=project.pk %}">
+		                    <div class="project-item">
+		                        <div class="item-img-box">
+		                            <div class="prj-img"
+										style="background: url({{ project.cover_image.url }} ); background-size: cover; background-position: center;"></div>
+		                        </div>
+		                        <div class="item-description">
+		                            <h3>{{ project.title }}</h3>
+		                            <h5>{{ project.team_name }} </h5>
+		                            <p>{{ project.description|linebreaksbr }}</p>
+		                        </div>
+		                    </div>
+		                </a>
+	                {% endfor %}
+                </div>
+            </div>
+
+            <div class="content-item">
+                <h1>news</h1>
+                <div class="news-list">
+                <ul>
+					{% for news_item in news %}
+	                    <a href="{% url 'news:news_detail' pk=news_item.pk %}"><li class="news-item">
+	                        <div class="item-img-box">
+								<div class="news-img"
+									style="background: url({{ news_item.cover_image.url }} ); background-size: cover; background-position: center;"></div>
+	                        </div>
+	                        <div class="item-description">
+	                            <h3>{{ news_item.title }}</h3>
+	                            <h5>{{ news_item.published_date }}</h5>
+	                            <p>{{ news_item.description|linebreaksbr }}</p>
+	                        </div>
+	                    </li></a>
+                    {% endfor %}
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

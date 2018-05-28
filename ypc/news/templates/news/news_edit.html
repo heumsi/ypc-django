@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block content %}
 	<div class="container">
 		<div class="content">
@@ -8,25 +9,19 @@
 			        {{ form.title.errors }}
 					<label for="title">제목</label>
 				    {{ form.title }}
-					<small class="form-text text-muted">Project의 제목을 입력해주세요.</small>
-			    </div>
-				<div class="form-group">
-			        {{ form.team_name.errors }}
-					<label for="title">팀 이름</label>
-				    {{ form.team_name }}
-					<small class="form-text text-muted">Project의 팀 이름을 입력해주세요.</small>
+					<small class="form-text text-muted">news의 제목을 입력해주세요.</small>
 			    </div>
 				<div class="form-group">
 			        {{ form.description.errors }}
 					<label for="title">설명</label>
 				    {{ form.description }}
-					<small class="form-text text-muted">Project에 대한 간단한 설명을 입력해주세요.</small>
+					<small class="form-text text-muted">news에 대한 간단한 설명을 입력해주세요.</small>
 			    </div>
 				<div class="form-group">
 			        {{ form.text.errors }}
 					<label for="title">내용</label>
 				    {{ form.text | safe }}
-					<small class="form-text text-muted">Project 내용을 입력해주세요.</small>
+					<small class="form-text text-muted">news 내용을 입력해주세요.</small>
 			    </div>
 				<div class="form-group">
 			        {{ form.cover_image.errors }}

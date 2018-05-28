@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
     <script src="{% static 'js/main.js' %}"></script>
 
 <!--    meta-->
@@ -39,23 +40,23 @@
 <body>
     <div class="header" id="topbar">
         <div class="logo">
-            <a href="{% url 'project_list' %}"><img src="{% static 'img/yp_logo.png' %}" alt="YPC 로고"></a>
+            <a href="{% url 'index' %}"><img src="{% static 'img/yp_logo.png' %}" alt="YPC 로고"></a>
         </div>
         <div class="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
         <div class="menu">
             <ul>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./news.html">News</a></li>
-                <li><a href="./community.html">Community</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'projects:project_list' %}">Projects</a></li>
+                <li><a href="{% url 'news:news_list' %}">News</a></li>
+                <!-- <li><a href="./community.html">Community</a></li> -->
             </ul>
         </div>
     </div>
 
 	{% block content %}
-		{% endblock %}
+	{% endblock %}
 
     <div class="footer">
         <div class="footer-container">
@@ -67,10 +68,10 @@
             </div>
             <div class="footer-box">
                 <ul>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./projects.html">Projects</a></li>
-                    <li><a href="./news.html">News</a></li>
-                    <li><a href="./community">Community</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'projects:project_list' %}">Projects</a></li>
+                    <li><a href="{% url 'news:news_list' %}">News</a></li>
+                    <!-- <li><a href="./community">Community</a></li> -->
                 </ul>
             </div>
         </div>

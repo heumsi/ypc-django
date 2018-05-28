@@ -5,7 +5,7 @@ from .forms import ProjectForm
 
 # Create your views here.
 def project_list(request) :
-	projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 	return render(request, 'projects/projects.html', {'projects' : projects})
 
 def project_detail(request, pk) :

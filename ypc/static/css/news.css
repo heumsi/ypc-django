@@ -65,8 +65,16 @@
 }
 
 .news-item .item-description > p{
+	height: 50px;
+	margin: 0;
     font-size: 14px;
-    line-height: 180%;;
+    line-height: 180%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* 라인수 */
+	-webkit-box-orient: vertical;
+	word-wrap:break-word;
 }
 
 

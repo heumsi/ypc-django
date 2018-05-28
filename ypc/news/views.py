@@ -8,7 +8,7 @@ def news_list(request) :
 	# news = News.objects
 	# print("#########", news)
 	# if(  )
-	news = News.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	news = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 	return render(request, 'news/news.html', {'news' : news})
 
 def news_detail(request, pk) :

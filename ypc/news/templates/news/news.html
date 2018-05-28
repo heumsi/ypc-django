@@ -16,7 +16,7 @@
 					{% for news_item in news %}
                     <a href="{% url 'news:news_detail' pk=news_item.pk %}"><li class="news-item">
                         <div class="item-img-box">
-							<div class="prj-img"
+							<div class="news-img"
 								style="background: url({{ news_item.cover_image.url }} ); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="item-description">

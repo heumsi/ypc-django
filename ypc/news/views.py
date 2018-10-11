@@ -37,7 +37,7 @@ def news_new(request) :
 def news_edit(request, pk) :
 	post = get_object_or_404(News, pk=pk)
 	if request.method == "POST" :
-		form = NewsForm(request.POST, instance=post)
+		form = NewsForm(request.POST, request.FILES, instance=post)
 
 		if form.is_valid():
 			post = form.save(commit=False)

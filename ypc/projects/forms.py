@@ -7,11 +7,12 @@ class ProjectForm(forms.ModelForm):
 
 	class Meta:
 		model = Project
-		fields = ('title', 'team_name', 'description', 'text', 'cover_image')
+		fields = ('title', 'team_name', 'description', 'text', 'cover_image', 'attachment')
 		widgets = {
 			'title': forms.TextInput(attrs={'class': 'form-control'}),
 			'team_name': forms.TextInput(attrs={'class': 'form-control'}),
 			'description': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
 			'cover_image': forms.FileInput(attrs={'class': 'form-control-file'}),
+			'attachment': forms.FileInput(attrs={'class': 'form-control-file'}),
 			'text': SummernoteWidget()
 		}

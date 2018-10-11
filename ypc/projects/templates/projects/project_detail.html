@@ -26,6 +26,7 @@
             <div class="content-description">
                 {{ project.text | safe }}
             </div>
+			<a href="{{ project.attachment.url }}">{{ project.filename }}</a>
         </div>
     </div>
 {% endblock %}

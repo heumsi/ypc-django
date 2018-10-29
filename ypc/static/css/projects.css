@@ -24,23 +24,43 @@
     grid-template-columns: repeat( 3, minmax(250px, 1fr) );
     grid-row-gap: 20px;
     grid-column-gap: 20px;
+
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+    /* -ms-grid-rows: 1fr; */
+}
+
+.grid-col-1 {
+    grid-column: 1;
+    -ms-grid-column: 1;
+}
+
+.grid-col-3 {
+    grid-column: 2;
+    -ms-grid-column: 3;
+}
+
+.grid-col-5 {
+    grid-column: 3;
+    -ms-grid-column: 5;
 }
 
 .project-list .project-item{
 	height: fit-content;
     /* height: var(--project-item-height); */
 /*    background-color: burlywood;*/
-    border-bottom: 4px solid #80f57a;
+    /* border-bottom: 4px solid #80f57a; */
     cursor: pointer;
 }
 
 .project-list .item-img-box{
     width: 100%;
+    height: 200px;
     height: var(--item-img-box-height);
     background-color: brown;
     overflow: hidden;
     transition: all 0.5s ease;
-    border-bottom: 4px solid #f8f594;
+    /* border-bottom: 4px solid #f8f594; */
 }
 
 .project-list .prj-img{
@@ -52,7 +72,7 @@
 }
 
 .project-item:hover{
-    color: var(--color-list-hover);
+    color: #eb1313;
 }
 
 
@@ -100,12 +120,12 @@
 .project-intro{
     width: 100%;
 /*    height: 500px;*/
-    margin-top: var(--header-height);
+    margin-top: 80px;
     position: relative;
 }
 
 .project-intro > .intro-container{
-    width: var(--container-width);
+    width: 1000px;
     height: var(--intro-container-height);
     margin: 0 auto;
     position: relative;

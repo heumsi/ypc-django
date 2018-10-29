@@ -6,11 +6,16 @@
         height: 450px;
         display: grid;
         grid-template-columns: 2fr 1fr;
+
+        display: -ms-grid;
+       -ms-grid-columns:2fr 1fr;
     }
 
     .intro-view > .title{
         padding: 20px 0 0 0;
     /*    background-color: dodgerblue;*/
+
+        -ms-grid-column : 1;
     }
 
     .intro-view .slogan{
@@ -23,7 +28,9 @@
         height: 220px;
         margin-top: 10%;
         padding: 20px;
-        border-left: 2px solid var(--color-dark-black);
+        border-left: 2px solid #141414;
+
+        -ms-grid-column : 2;
     }
 
     .intro-view > .description > h3{
@@ -31,14 +38,14 @@
         font-weight: bold;
     }
 
-    .intro-view > .description > p {   
+    .intro-view > .description > p {
         margin-top: 20px;
         font-size: 14px;
         line-height: 200%;
-        color: var(--color-bright-black);
+        color: #848484;;
     }
-    
-    
+
+
     .content-item{
         margin-top: 40px;
     }
@@ -53,9 +60,11 @@
     /* intro-view */
      .intro-view{
         width:100%;
+        display: -ms-grid;
         display: grid;
+       -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        
+
     }
 
     .intro-view > .title{
@@ -71,7 +80,7 @@
         height: 250px;
         margin-top: 20px;
         padding: 20px;
-        border-top: 2px solid var(--color-bright-black);
+        border-top: 2px solid #848484;;
         line-height: 180%;
     }
 
@@ -80,17 +89,17 @@
         font-weight: bold;
     }
 
-    .intro-view > .description > p {   
+    .intro-view > .description > p {
         margin-top: 10px;
         font-size: 14px;
-        color: var(--color-bright-black);
+        color: #848484;;
     }
-    
+
     .intro-view > .description > textarea {
         width: 100%;
         margin-top: 10px;
         font-size: 14px;
-        color: var(--color-bright-black);
+        color: #848484;;
         border: none;
         resize: none;
         font-family: inherit;

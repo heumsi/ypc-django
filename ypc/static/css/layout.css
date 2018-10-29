@@ -25,12 +25,12 @@ a{
 
 a:hover{
 	text-decoration: none;
-	color: var(--color-list-hover);
+	color: #eb1313;
 }
 
 .header{
     width: 100%;
-    height: var(--header-height);
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -80,13 +80,13 @@ a:hover{
 }
 
 .menu > ul > li:hover{
-    color: var(--color-list-hover);
+    color: #eb1313;
 }
 
 .container{
-    width: var(--container-width);
+    width: 1000px;
     height: 100%;
-    margin: var(--header-height) auto 0 auto;
+    margin: 80px auto 0 auto;
     padding: 0 20px;
     display: flex;
 }
@@ -102,12 +102,12 @@ a:hover{
     padding: 10px 20px 10px 10px;
     text-align: right;
     text-transform: uppercase;
-    color: var(--color-bright-black);
+    color: #848484;
     cursor: pointer;
 }
 
 .sidebar ul li:hover{
-    color: var(--color-list-hover);
+    color: #eb1313;
 }
 
 .content{
@@ -115,6 +115,7 @@ a:hover{
 }
 
 .content h1{
+    width: 100px;
     width: fit-content;
     margin: 20px 0;
     padding-bottom: 10px;
@@ -156,16 +157,18 @@ a:hover{
 .footer {
     width: 100%;
     margin-top: 50px;
-    background-color: var(--color-dark-black);
+    background-color: #141414;
     color: #ffffff;
     font-weight: 400;
 }
 
 .footer > .footer-container{
-    width: var(--container-width);
+    width: 1000px;
     padding: 30px 20px;
     margin: 0 auto;
+    display:-ms-grid;
     display: grid;
+    -ms-grid-columns: 2fr 0px 1fr;
     grid-template-columns: 2fr 1fr;
 }
 
@@ -191,7 +194,7 @@ a:hover{
 }
 
 .footer-box > ul > li:hover{
-    color: var(--color-list-hover);
+    color: #eb1313;
 }
 
 .endless_more{
@@ -262,7 +265,7 @@ a:hover{
         text-align: center;
         text-transform: uppercase;
         font-size: 7px;
-        color: var(--color-bright-black);
+        color: #848484;
     }
 
     .top-sidebar{
@@ -287,8 +290,11 @@ a:hover{
         width: 100%;
         padding: 30px 20px;
         margin: 0 auto;
+        display:-ms-grid;
         display: grid;
+
         grid-template-columns: 1fr;
+        -ms-grid-columns:1fr;
     }
 
     .footer-box{

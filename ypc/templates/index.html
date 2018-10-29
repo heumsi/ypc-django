@@ -27,8 +27,9 @@
                 <div class="project-list">
 
 					{% for project in projects %}
-		                <a href="{% url 'projects:project_detail' pk=project.pk %}">
-		                    <div class="project-item">
+
+		                <div class="{% cycle 'grid-col-1' 'grid-col-3' 'grid-col-5' %} project-item">
+                            <a href="{% url 'projects:project_detail' pk=project.pk %}">
 		                        <div class="item-img-box">
 		                            <div class="prj-img"
 										style="background: url({{ project.cover_image.url }} ); background-size: cover; background-position: center;"></div>
@@ -38,8 +39,8 @@
 		                            <h5>{{ project.team_name }} </h5>
 		                            <p>{{ project.description|linebreaksbr }}</p>
 		                        </div>
-		                    </div>
-		                </a>
+                            </a>
+		                </div>
 	                {% endfor %}
                 </div>
             </div>

@@ -24,7 +24,6 @@ INSTALLED_APPS = [
 	'django_summernote',
 	'el_pagination',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

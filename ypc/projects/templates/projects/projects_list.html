@@ -1,5 +1,7 @@
 {% load el_pagination_tags %}
 {% paginate projects %}
+<!-- style="-ms-grid-row:{{ row }}" -->
+<div class="project-list">
 {% for project in projects %}
     <div class="{% cycle 'grid-col-1' 'grid-col-3' 'grid-col-5' %} project-item">
         <a href="{% url 'projects:project_detail' pk=project.pk %}" >
@@ -15,4 +17,5 @@
         </a>
     </div>
 {% endfor %}
+</div>
 {% show_more "" %}

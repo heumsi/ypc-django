@@ -3,7 +3,8 @@ from .models import News
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 class NewsForm(forms.ModelForm):
-	cover_image = forms.FileField(required=False)
+	cover_image = forms.FileField(required=True)
+	attachment = forms.FileField(required=False)
 
 	class Meta:
 		model = News

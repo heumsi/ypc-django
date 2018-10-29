@@ -10,14 +10,14 @@ def user_directory_path(instance, filename):
 
 class Project(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=20)
-    team_name = models.CharField(max_length=20)
-    description = models.TextField(null=True)
-    text = models.TextField()
+    title = models.CharField(max_length=20, blank=True)
+    team_name = models.CharField(max_length=20, blank=True)
+    description = models.TextField(null=True, blank=True)
+    text = models.TextField(blank=True)
     cover_image = models.ImageField(null=True, upload_to=user_directory_path)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    attachment = models.FileField(null=True, upload_to=user_directory_path)
+    attachment = models.FileField(null=True, upload_to=user_directory_path, blank=True)
 
     @property
     def filename(self):
